@@ -1,73 +1,68 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-}
-
+/* styles.css */
 body {
+    font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #f0f2f5;
+    min-height: 100vh;
+    margin: 0;
 }
 
 .container {
-    width: 90%;
     max-width: 800px;
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-h1 {
-    text-align: center;
-    color: #333;
-}
-
-.form-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-input, select {
     width: 100%;
-    padding: 10px;
+    margin: 20px;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    background-color: #f8f8f8;
+}
+
+.form-section {
+    margin-bottom: 20px;
+}
+
+.form-section label {
+    display: block;
+    margin-top: 10px;
+}
+
+.form-section input, .form-section select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    margin-bottom: 10px;
-}
-
-.button-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
 }
 
 button {
-    flex: 1 1 30%;
-    padding: 10px;
-    color: white;
+    margin-top: 10px;
+    padding: 10px 20px;
     background-color: #4CAF50;
+    color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s;
 }
 
 button:hover {
     background-color: #45a049;
 }
 
-.results {
+.result-section {
     margin-top: 20px;
-    padding: 15px;
-    background-color: #f9f9f9;
+}
+
+.result-section h2 {
+    color: #333;
+}
+
+#results {
+    padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    min-height: 50px;
-    word-wrap: break-word;
+    background-color: #fff;
+    max-height: 200px;
+    overflow-y: auto;
 }
