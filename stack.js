@@ -23,28 +23,31 @@ class FinanceTracker {
         this.totalTransactions = 0; // Count of all transactions
     }
 
-    // Function to validate date input
+    // Validating date
     isValidDate(date) {
-        // Expecting the format YYYY-MM-DD
+        // Assuming format YYYY-MM-DD
         if (date.length !== 10 || date[4] !== '-' || date[7] !== '-') {
+            //format hi galat hai!
             return false;
         }
+        //extracting the year, month and day substr(index, length_to_be_extracted)
         const year = parseInt(date.substr(0, 4), 10);
         const month = parseInt(date.substr(5, 2), 10);
         const day = parseInt(date.substr(8, 2), 10);
 
         // Check if the year is valid
-        if (year < 2000) {
+        if (year < 2000) 
             return false;
-        }
-
+        
         // Get the current date
         const now = new Date();
         const currentYear = now.getFullYear();
-        const currentMonth = now.getMonth() + 1; // Months are zero indexed
+        // Months are zero indexed
+        const currentMonth = now.getMonth() + 1; 
         const currentDay = now.getDate();
 
         // Check if the input date is valid
+        //check for future date
         if (year > currentYear || 
             (year === currentYear && (month > currentMonth || 
             (month === currentMonth && day > currentDay)))) {
