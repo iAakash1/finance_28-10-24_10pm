@@ -38,6 +38,11 @@ select {
     margin: 5px 0;
     border: 1px solid #d1d1d1; /* Soft border */
     border-radius: 5px;
+    font-size: 1rem; /* Consistent font size for all inputs */
+}
+
+input[type="date"] {
+    font-size: 1rem; /* Ensure date input has the same font size */
 }
 
 button {
