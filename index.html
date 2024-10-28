@@ -3,41 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
     <title>Finance Tracker</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <h1>Finance Tracker</h1>
-        
-        <div class="input-section">
-            <h2>Add Transaction</h2>
+        <div class="form-group">
             <input type="number" id="amount" placeholder="Amount" required>
             <select id="type">
-                <option value="" disabled selected>Select Type</option>
                 <option value="income">Income</option>
                 <option value="expense">Expense</option>
             </select>
             <input type="text" id="date" placeholder="YYYY-MM-DD" required>
             <input type="text" id="category" placeholder="Category" required>
             <input type="text" id="description" placeholder="Description" required>
-            <button id="addTransaction">Add Transaction</button>
         </div>
-        
-        <div class="result-section">
-            <h2>Results</h2>
+        <div class="button-group">
+            <button id="addTransaction">Add Transaction</button>
             <button id="viewLastTransaction">View Last Transaction</button>
             <button id="removeTransaction">Remove Last Transaction</button>
             <button id="clearTransactions">Clear All Transactions</button>
             <button id="getBalance">Get Balance</button>
             <button id="getAllTransactions">Get All Transactions</button>
-            <button id="undoTransaction">Undo Last Removed Transaction</button>
-            <button id="getTotalTransactions">Get Total Transactions</button>
-            <button id="checkBalanceStatus">Check Income vs Expense</button>
-            <div id="output" class="output"></div>
+            <button id="undoTransaction">Undo Last Removed</button>
+            <button id="getTotalTransactions">Total Transactions</button>
+            <button id="checkBalanceStatus">Check Balance Status</button>
         </div>
+        <div id="output" class="output-area"></div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
