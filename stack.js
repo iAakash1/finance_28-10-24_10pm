@@ -59,11 +59,14 @@ class FinanceTracker {
 
     // Add a new transaction
     addTransaction(amount, type, date, category, description) {
+        //if invalid date
         if (!this.isValidDate(date)) {
             console.log("Invalid date. Please enter a date greater than or equal to the year 2000 and less than or equal to today's date.");
             return;
         }
 
+        //add a new node before the current top
+        //top ko aage badhao
         const newTransaction = new TransactionNode(amount, type, date, category, description);
         newTransaction.next = this.top; // Add to the top of the stack
         this.top = newTransaction;
@@ -73,6 +76,7 @@ class FinanceTracker {
 
     // Remove the top transaction
     removeTopTransaction() {
+        //stack is empty
         if (this.top === null) {
             console.log("No transactions to remove.");
             return;
@@ -91,18 +95,21 @@ class FinanceTracker {
 
     // View the last transaction
     viewLastTransaction() {
+        //stack empty
         if (this.top === null) {
             console.log("No transactions available.");
             return;
         }
         console.log("Last Transaction: ");
+        //print top ka data
         console.log(`Amount: ${this.top.amount}, Type: ${this.top.type}, Date: ${this.top.date}, Category: ${this.top.category}, Description: ${this.top.description}`);
     }
 
     // Clear all transactions
     clearAllTransactions() {
+        //till we don't reach the end of the stack, keep popping
         while (this.top !== null) {
-            this.removeTopTransaction(); // Remove transactions one by one
+            this.removeTopTransaction(); 
         }
         console.log("All transactions cleared successfully.");
     }
@@ -124,6 +131,7 @@ class FinanceTracker {
 
     // Display all transactions
     getAllTransactions() {
+        //stack empty
         if (this.top === null) {
             console.log("No transactions available.");
             return;
@@ -131,6 +139,7 @@ class FinanceTracker {
         console.log("All Transactions:");
         let curr = this.top;
         while (curr !== null) {
+            //jab tak end of stack nahi ata, keep displaying details
             console.log(`Amount: ${curr.amount}, Type: ${curr.type}, Date: ${curr.date}, Category: ${curr.category}, Description: ${curr.description}`);
             curr = curr.next;
         }
@@ -138,6 +147,7 @@ class FinanceTracker {
 
     // Undo the latest removed transaction
     undoLatestRemovedTransaction() {
+        //will check in the removedtop ll
         if (this.removedTop === null) {
             console.log("No transactions to undo.");
             return;
@@ -170,6 +180,7 @@ class FinanceTracker {
     }
 
     // Tell if expenses are more than income
+    //expense vs income
     tellPositiveOrNegative() {
         let totalIncome = 0.0, totalExpense = 0.0;
         let curr = this.top;
