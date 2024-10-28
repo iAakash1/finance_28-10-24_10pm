@@ -1,26 +1,26 @@
 class TransactionNode {
     constructor(amount, type, date, category, description) {
         this.amount = amount;
-        this.type = type;
-        this.date = date;
-        this.category = category;
-        this.description = description;
-        this.next = null;
+        this.type = type; 
+        this.date = date; 
+        this.category = category; 
+        this.description = description; 
+        this.next = null; 
     }
 }
 
 class RemovedNode {
     constructor(transaction) {
-        this.transaction = transaction;
-        this.next = null;
+        this.transaction = transaction; 
+        this.next = null; 
     }
 }
 
 class FinanceTracker {
     constructor() {
-        this.top = null;
-        this.removedTop = null;
-        this.totalTransactions = 0;
+        this.top = null; 
+        this.removedTop = null; 
+        this.totalTransactions = 0; 
     }
 
     isValidDate(date) {
@@ -48,8 +48,8 @@ class FinanceTracker {
             return "Invalid date. Please enter a date greater than or equal to the year 2000 and less than or equal to today's date.";
         }
         const newTransaction = new TransactionNode(amount, type, date, category, description);
-        newTransaction.next = this.top;
-        this.top = newTransaction;
+        newTransaction.next = this.top; 
+        this.top = newTransaction; 
         this.totalTransactions++;
         return `Transaction of amount ${amount} added successfully.`;
     }
@@ -58,11 +58,11 @@ class FinanceTracker {
         if (this.top === null) {
             return "No transactions to remove.";
         }
-        const newRemovedNode = new RemovedNode(this.top);
-        newRemovedNode.next = this.removedTop;
-        this.removedTop = newRemovedNode;
-        this.top = this.top.next;
-        this.totalTransactions--;
+        const newRemovedNode = new RemovedNode(this.top); 
+        newRemovedNode.next = this.removedTop; 
+        this.removedTop = newRemovedNode; 
+        this.top = this.top.next; 
+        this.totalTransactions--; 
         return `Transaction of amount ${newRemovedNode.transaction.amount} removed successfully.`;
     }
 
@@ -118,10 +118,10 @@ class FinanceTracker {
             this.removedTop.transaction.category,
             this.removedTop.transaction.description
         );
-        this.removedTop = this.removedTop.next;
-        transactionToRestore.next = this.top;
-        this.top = transactionToRestore;
-        this.totalTransactions++;
+        this.removedTop = this.removedTop.next; 
+        transactionToRestore.next = this.top; 
+        this.top = transactionToRestore; 
+        this.totalTransactions++; 
         return "Last removed transaction has been undone.";
     }
 
@@ -150,8 +150,16 @@ class FinanceTracker {
     }
 }
 
+// Initialize finance tracker
 const tracker = new FinanceTracker();
 
+// Update output function for better display
+function updateOutput(message) {
+    const outputArea = document.getElementById('output');
+    outputArea.innerText = message;
+}
+
+// Event listeners for buttons
 document.getElementById('addTransaction').onclick = function () {
     const amount = parseFloat(document.getElementById('amount').value);
     const type = document.getElementById('type').value;
@@ -160,45 +168,45 @@ document.getElementById('addTransaction').onclick = function () {
     const description = document.getElementById('description').value;
 
     const result = tracker.addTransaction(amount, type, date, category, description);
-    document.getElementById('output').innerText = result;
+    updateOutput(result);
 };
 
 document.getElementById('viewLastTransaction').onclick = function () {
     const result = tracker.viewLastTransaction();
-    document.getElementById('output').innerText = result;
+    updateOutput(result);
 };
 
 document.getElementById('removeTransaction').onclick = function () {
     const result = tracker.removeTopTransaction();
-    document.getElementById('output').innerText = result;
+    updateOutput(result);
 };
 
 document.getElementById('clearTransactions').onclick = function () {
     const result = tracker.clearAllTransactions();
-    document.getElementById('output').innerText = result;
+    updateOutput(result);
 };
 
 document.getElementById('getBalance').onclick = function () {
     const balance = tracker.getBalance();
-    document.getElementById('output').innerText = `Current Balance: ${balance}`;
+    updateOutput(`Current Balance: ${balance}`);
 };
 
 document.getElementById('getAllTransactions').onclick = function () {
     const result = tracker.getAllTransactions();
-    document.getElementById('output').innerText = result;
+    updateOutput(result);
 };
 
 document.getElementById('undoTransaction').onclick = function () {
     const result = tracker.undoLatestRemovedTransaction();
-    document.getElementById('output').innerText = result;
+    updateOutput(result);
 };
 
 document.getElementById('getTotalTransactions').onclick = function () {
     const total = tracker.getTotalTransactions();
-    document.getElementById('output').innerText = `Total Transactions: ${total}`;
+    updateOutput(`Total Transactions: ${total}`);
 };
 
 document.getElementById('checkBalanceStatus').onclick = function () {
     const status = tracker.tellPositiveOrNegative();
-    document.getElementById('output').innerText = status;
+    updateOutput(status);
 };
