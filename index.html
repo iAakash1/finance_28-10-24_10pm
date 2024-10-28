@@ -9,30 +9,35 @@
 <body>
     <div class="container">
         <h1>Finance Tracker</h1>
-        <div class="form-container">
-            <input type="number" id="amount" placeholder="Amount (spent/earned)">
-            <select id="type">
+        <div class="form-section">
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" placeholder="Enter amount" required>
+            
+            <label for="type">Type:</label>
+            <select id="type" required>
                 <option value="income">Income</option>
                 <option value="expense">Expense</option>
             </select>
-            <input type="date" id="date" placeholder="Date">
-            <input type="text" id="category" placeholder="Category">
-            <input type="text" id="description" placeholder="Description">
-            <div class="button-container">
-                <button onclick="addTransaction()">Add Transaction</button>
-                <button onclick="removeTopTransaction()">Remove Top Transaction</button>
-                <button onclick="viewLastTransaction()">View Last Transaction</button>
-                <button onclick="clearAllTransactions()">Clear All Transactions</button>
-                <button onclick="getBalance()">Get Balance</button>
-                <button onclick="getAllTransactions()">View All Transactions</button>
-                <button onclick="undoLatestRemovedTransaction()">Undo Last Removed</button>
-                <button onclick="getTotalTransactions()">Total Transactions</button>
-                <button onclick="tellPositiveOrNegative()">Expenses vs Income</button>
-            </div>
-        </div>
-        <div id="results" class="results"></div>
-    </div>
+            
+            <label for="date">Date (YYYY-MM-DD):</label>
+            <input type="date" id="date" required>
 
+            <label for="category">Category:</label>
+            <input type="text" id="category" placeholder="Enter category" required>
+
+            <label for="description">Description:</label>
+            <input type="text" id="description" placeholder="Enter description">
+
+            <button id="add-transaction">Add Transaction</button>
+            <button id="get-balance">Get Balance</button>
+        </div>
+        
+        <div class="result-section">
+            <h2>Results</h2>
+            <div id="results"></div>
+        </div>
+    </div>
+    
     <script src="script.js"></script>
 </body>
 </html>
