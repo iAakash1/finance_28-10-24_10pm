@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Finance Tracker</h1>
+        
+        <div class="form-section">
+            <h2>Add Transaction</h2>
+            <form id="transactionForm">
+                <input type="number" id="amount" placeholder="Amount" required>
+                <select id="type" required>
+                    <option value="" disabled selected>Select Type</option>
+                    <option value="income">Income</option>
+                    <option value="expense">Expense</option>
+                </select>
+                <input type="date" id="date" required>
+                <input type="text" id="category" placeholder="Category" required>
+                <textarea id="description" placeholder="Description" required></textarea>
+                <button type="submit">Add Transaction</button>
+            </form>
+        </div>
+
+        <div class="output-section">
+            <h2>Actions</h2>
+            <button id="viewLastTransaction">View Last Transaction</button>
+            <button id="removeTopTransaction">Remove Top Transaction</button>
+            <button id="clearAllTransactions">Clear All Transactions</button>
+            <button id="getBalance">Get Balance</button>
+            <button id="getAllTransactions">Get All Transactions</button>
+            <button id="undoLatestRemovedTransaction">Undo Latest Removed Transaction</button>
+            <button id="getTotalTransactions">Get Total Transactions</button>
+            <button id="tellPositiveOrNegative">Check Income vs. Expenses</button>
+        </div>
+
+        <div class="result-section">
+            <h2>Results</h2>
+            <pre id="resultOutput"></pre>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
