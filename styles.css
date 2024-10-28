@@ -1,23 +1,34 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #e9ecef; /* Light background for better contrast */
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fa; /* Soft light background */
     margin: 0;
     padding: 20px;
+    color: #333; /* Darker text color */
 }
 
 .container {
-    max-width: 600px;
-    margin: 0 auto;
-    background: #ffffff; /* White background for the container */
+    max-width: 800px; /* Increased width for better layout */
+    margin: auto;
+    background: #ffffff; /* Clean white background */
     padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease; /* Smooth shadow transition */
+}
+
+.container:hover {
+    box-shadow: 0 8px 60px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
 }
 
 h1 {
     text-align: center;
-    color: #343a40; /* Darker title color */
+    color: #2c3e50; /* Darker, modern title color */
     margin-bottom: 20px;
+    font-size: 2.5rem; /* Larger title size */
 }
 
 .form-group {
@@ -27,47 +38,67 @@ h1 {
 }
 
 input, select {
-    padding: 12px;
+    padding: 15px;
     margin: 5px 0;
-    border: 1px solid #ced4da;
+    border: 1px solid #d1d1d1; /* Soft border */
     border-radius: 5px;
     transition: border-color 0.3s ease;
+    font-size: 1rem; /* Consistent font size */
 }
 
 input:focus, select:focus {
-    border-color: #80bdff; /* Blue border on focus */
+    border-color: #3498db; /* Blue focus border */
     outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5); /* Light blue shadow on focus */
 }
 
 .button-group {
     display: flex;
-    flex-direction: row; /* Keep buttons side by side */
     justify-content: space-between;
-    gap: 10px; /* Space between buttons */
+    margin-top: 15px; /* Space above button group */
 }
 
 button {
-    padding: 12px;
+    flex: 1; /* Equal button sizes */
+    margin: 0 5px; /* Space between buttons */
+    padding: 15px;
     border: none;
     border-radius: 5px;
-    background-color: #28a745; /* Green background for buttons */
+    background-color: #28a745; /* Vibrant green */
     color: white;
     font-weight: bold;
+    font-size: 1rem; /* Consistent font size */
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
 }
 
 button:hover {
     background-color: #218838; /* Darker green on hover */
-    transform: scale(1.05); /* Slight scaling effect on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
 }
 
 .output-area {
     margin-top: 20px;
-    padding: 15px;
-    background-color: #f8f9fa; /* Slightly darker background for output area */
-    border: 1px solid #ced4da;
+    padding: 20px;
+    background-color: #f8f9fa; /* Light grey for output area */
+    border: 1px solid #ced4da; /* Soft border */
     border-radius: 5px;
-    color: #495057; /* Darker text color for better readability */
+    color: #495057; /* Dark text color */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    font-size: 1rem; /* Consistent font size */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px; /* Reduced padding on smaller screens */
+    }
+
+    h1 {
+        font-size: 2rem; /* Adjusted title size */
+    }
+
+    button {
+        font-size: 0.9rem; /* Smaller font for buttons */
+    }
 }
