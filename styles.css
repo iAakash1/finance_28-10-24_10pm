@@ -17,11 +17,6 @@ body {
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease; /* Smooth shadow transition */
-}
-
-.container:hover {
-    box-shadow: 0 8px 60px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
 }
 
 h1 {
@@ -43,27 +38,9 @@ select {
     margin: 5px 0;
     border: 1px solid #d1d1d1; /* Soft border */
     border-radius: 5px;
-    transition: border-color 0.3s ease;
-    font-size: 1rem; /* Consistent font size */
-}
-
-input:focus,
-select:focus {
-    border-color: #3498db; /* Blue focus border */
-    outline: none;
-    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5); /* Light blue shadow on focus */
-}
-
-.button-group {
-    display: flex;
-    flex-wrap: wrap; /* Allow buttons to wrap onto multiple lines */
-    justify-content: space-between; /* Distribute space between buttons */
-    margin-top: 15px; /* Space above button group */
 }
 
 button {
-    flex: 0 0 calc(25% - 10px); /* Take 25% of the width, minus some margin */
-    margin: 5px; /* Space between buttons */
     padding: 15px;
     border: none;
     border-radius: 5px;
@@ -73,6 +50,8 @@ button {
     font-size: 1rem; /* Consistent font size */
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+    width: 100%; /* Full width for the big bar */
+    margin-bottom: 15px; /* Spacing between buttons */
 }
 
 button:hover {
@@ -80,30 +59,31 @@ button:hover {
     transform: translateY(-2px); /* Lift effect on hover */
 }
 
-/* Output area styling */
+.button-group {
+    display: flex;
+    flex-wrap: wrap; /* Allow buttons to wrap onto multiple lines */
+    justify-content: space-between; /* Distribute space between buttons */
+    margin-top: 15px; /* Space above button group */
+}
+
+.button-group button {
+    flex: 0 0 calc(48% - 10px); /* Take 48% of the width, allowing space for margin */
+}
+
 .output-area {
     margin-top: 20px;
     padding: 20px;
     background-color: #f8f9fa; /* Light grey for output area */
     border: 1px solid #ced4da; /* Soft border */
     border-radius: 5px;
-    color: #495057; /* Dark text color */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    font-size: 1rem; /* Consistent font size */
 }
 
-/* Responsive styles */
 @media (max-width: 768px) {
-    .container {
-        padding: 20px; /* Reduced padding on smaller screens */
-    }
-
-    h1 {
-        font-size: 2rem; /* Adjusted title size */
-    }
-
     button {
         font-size: 0.9rem; /* Smaller font for buttons */
-        flex: 0 0 calc(50% - 10px); /* On small screens, make buttons 50% width */
+    }
+
+    .button-group button {
+        flex: 0 0 calc(100% - 10px); /* Full width for buttons on small screens */
     }
 }
