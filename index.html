@@ -7,36 +7,30 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
     <div class="container">
         <h1>Finance Tracker</h1>
-        
-        <div class="input-section">
-            <input id="amount" type="number" placeholder="Amount (e.g., 50.00)" step="0.01">
+        <div class="form-container">
+            <input type="number" id="amount" placeholder="Amount (spent/earned)">
             <select id="type">
                 <option value="income">Income</option>
                 <option value="expense">Expense</option>
             </select>
-            <input id="date" type="date">
-            <input id="category" type="text" placeholder="Category (e.g., Grocery)">
-            <input id="description" type="text" placeholder="Description">
-            <button onclick="addTransaction()">Add Transaction</button>
+            <input type="date" id="date" placeholder="Date">
+            <input type="text" id="category" placeholder="Category">
+            <input type="text" id="description" placeholder="Description">
+            <div class="button-container">
+                <button onclick="addTransaction()">Add Transaction</button>
+                <button onclick="removeTopTransaction()">Remove Top Transaction</button>
+                <button onclick="viewLastTransaction()">View Last Transaction</button>
+                <button onclick="clearAllTransactions()">Clear All Transactions</button>
+                <button onclick="getBalance()">Get Balance</button>
+                <button onclick="getAllTransactions()">View All Transactions</button>
+                <button onclick="undoLatestRemovedTransaction()">Undo Last Removed</button>
+                <button onclick="getTotalTransactions()">Total Transactions</button>
+                <button onclick="tellPositiveOrNegative()">Expenses vs Income</button>
+            </div>
         </div>
-
-        <div class="tabs">
-            <button onclick="removeTopTransaction()">Remove Top Transaction</button>
-            <button onclick="viewLastTransaction()">View Last Transaction</button>
-            <button onclick="clearAllTransactions()">Clear All Transactions</button>
-            <button onclick="getBalance()">Get Balance</button>
-            <button onclick="getAllTransactions()">View All Transactions</button>
-            <button onclick="undoLatestRemovedTransaction()">Undo Last Removed</button>
-            <button onclick="getTotalTransactions()">Total Transactions</button>
-            <button onclick="tellPositiveOrNegative()">Expenses vs. Income</button>
-        </div>
-        
-        <div class="results-section" id="results">
-            <!-- Results will be displayed here -->
-        </div>
+        <div id="results" class="results"></div>
     </div>
 
     <script src="script.js"></script>
