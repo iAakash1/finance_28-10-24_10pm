@@ -10,8 +10,8 @@
     <div class="container">
         <h1>Finance Tracker</h1>
 
+        <!-- Form for adding a new transaction -->
         <div class="form-group">
-            <!-- Input fields for adding transaction -->
             <input type="number" id="amount" placeholder="Amount" required>
             <select id="type" required>
                 <option value="" disabled selected>Select Type</option>
@@ -23,22 +23,22 @@
             <input type="text" id="description" placeholder="Description" required>
         </div>
 
-        <!-- Button to add the transaction -->
+        <!-- Action Buttons -->
         <button id="addTransaction">Add Transaction</button>
-
-        <!-- Other action buttons -->
-        <button id="getAllTransactions">Get All Transactions</button>
+        <button id="viewLastTransaction">View Last Transaction</button>
         <button id="removeTransaction">Remove Transaction</button>
         <button id="clearTransactions">Clear All Transactions</button>
         <button id="getBalance">Get Balance</button>
-        <button id="getTotalTransactions">Get Total Transactions</button>
+        <button id="getAllTransactions">Get All Transactions</button>
         <button id="undoTransaction">Undo Last Removed Transaction</button>
+        <button id="getTotalTransactions">Get Total Transactions</button>
         <button id="checkBalanceStatus">Tell if Expenses are More than Income</button>
 
-        <!-- Output area to display messages -->
+        <!-- Output area for displaying results -->
         <div class="output-area" id="output"></div>
     </div>
 
+    <!-- Link to JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
