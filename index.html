@@ -11,25 +11,29 @@
         <h1>Finance Tracker</h1>
 
         <div class="form-group">
+            <!-- Input fields for adding transaction -->
             <input type="number" id="amount" placeholder="Amount" required>
             <select id="type" required>
                 <option value="" disabled selected>Select Type</option>
                 <option value="income">Income</option>
                 <option value="expense">Expense</option>
             </select>
-            <input type="text" id="date" placeholder="YYYY-MM-DD" required>
             <input type="date" id="date" placeholder="YYYY-MM-DD" required>
             <input type="text" id="category" placeholder="Category" required>
             <input type="text" id="description" placeholder="Description" required>
         </div>
 
-            <button id="getAllTransactions">Get All Transactions</button>
-            <button id="undoTransaction">Undo Latest Removed Transaction</button>
-            <button id="getTotalTransactions">Get Total Transactions</button>
-            <button id="tellPositiveOrNegative">Expenses VS Income</button>
-            <button id="tellPositiveOrNegative">Tell if Expenses are More than Income</button>
-        </div>
+        <!-- Button to add the transaction -->
+        <button id="addTransaction">Add Transaction</button>
 
+        <!-- Other action buttons -->
+        <button id="getAllTransactions">Get All Transactions</button>
+        <button id="undoTransaction">Undo Latest Removed Transaction</button>
+        <button id="getTotalTransactions">Get Total Transactions</button>
+        <button id="tellPositiveOrNegative">Expenses VS Income</button>
+        <button id="tellPositiveOrNegative">Tell if Expenses are More than Income</button>
+
+        <!-- Output area to display messages -->
         <div class="output-area" id="output"></div>
     </div>
 
