@@ -3,39 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task Manager</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Finance Tracker</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your external CSS -->
 </head>
 <body>
     <div class="container">
-        <h1>Task Manager</h1>
+        <h1>Finance Tracker</h1>
         
-        <!-- Input Fields -->
-        <div class="task-input">
-            <input type="text" id="task" placeholder="Task Name">
-            <input type="text" id="description" placeholder="Description">
-            <input type="date" id="dueDate">
-            <input type="text" id="category" placeholder="Category">
-            <button id="addTaskBtn">Add Task</button>
+        <!-- Form for adding transactions -->
+        <div>
+            <input type="number" id="amount" placeholder="Amount" required>
+            <select id="type">
+                <option value="income">Income</option>
+                <option value="expense">Expense</option>
+            </select>
+            <input type="date" id="date" required>
+            <input type="text" id="category" placeholder="Category" required>
+            <input type="text" id="description" placeholder="Description" required>
+            <button id="addTransaction">Add Transaction</button>
         </div>
-        
-        <!-- Action Buttons -->
+
+        <!-- Buttons for various actions -->
         <div class="action-buttons">
-            <button id="viewTasksBtn">View All Tasks</button>
-            <button id="viewCompletedBtn">View Completed Tasks</button>
-            <button id="viewTasksByCategoryBtn">View Tasks by Category</button>
-            <button id="latestDeadlineTaskBtn">Latest Deadline Task</button>
-            <button id="clearTasksBtn">Clear All Tasks</button>
-            <button id="showProgressBtn">Show Progress</button>
-            <button id="undoCompletedBtn">Undo Completed Task</button>
+            <button id="viewLastTransaction">View Last Transaction</button>
+            <button id="removeTransaction">Remove Last Transaction</button>
+            <button id="clearTransactions">Clear All Transactions</button>
+            <button id="getBalance">Get Balance</button>
+            <button id="getAllTransactions">View All Transactions</button>
+            <button id="undoTransaction">Undo Last Removed Transaction</button>
+            <button id="getTotalTransactions">Get Total Transactions</button>
+            <button id="checkBalanceStatus">Check Balance Status</button>
         </div>
-        
-        <!-- Task Containers -->
-        <div id="tasksContainer"></div>
-        <div id="completedTasksContainer" style="display: none;"></div>
-        <div id="latestTaskContainer" style="display: none;"></div>
+
+        <!-- Output Area -->
+        <div id="output" class="output">
+            <!-- Results will be displayed here -->
+        </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="app.js"></script> <!-- Link to your JavaScript -->
 </body>
 </html>
