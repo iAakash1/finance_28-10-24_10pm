@@ -4,43 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Finance Tracker</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your external CSS -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <h1>Finance Tracker</h1>
-        
-        <!-- Form for adding transactions -->
-        <div>
+
+        <div class="form-group">
             <input type="number" id="amount" placeholder="Amount" required>
-            <select id="type">
+            <select id="type" required>
+                <option value="" disabled selected>Select Type</option>
                 <option value="income">Income</option>
                 <option value="expense">Expense</option>
             </select>
-            <input type="date" id="date" required>
+            <input type="text" id="date" placeholder="YYYY-MM-DD" required>
+            <input type="date" id="date" placeholder="YYYY-MM-DD" required>
             <input type="text" id="category" placeholder="Category" required>
             <input type="text" id="description" placeholder="Description" required>
-            <button id="addTransaction">Add Transaction</button>
         </div>
-
-        <!-- Buttons for various actions -->
-        <div class="action-buttons">
-            <button id="viewLastTransaction">View Last Transaction</button>
-            <button id="removeTransaction">Remove Last Transaction</button>
-            <button id="clearTransactions">Clear All Transactions</button>
-            <button id="getBalance">Get Balance</button>
-            <button id="getAllTransactions">View All Transactions</button>
-            <button id="undoTransaction">Undo Last Removed Transaction</button>
+@@ -32,12 +32,12 @@
+            <button id="getAllTransactions">Get All Transactions</button>
+            <button id="undoTransaction">Undo Latest Removed Transaction</button>
             <button id="getTotalTransactions">Get Total Transactions</button>
-            <button id="checkBalanceStatus">Check Balance Status</button>
+            <button id="tellPositiveOrNegative">Expenses VS Income</button>
+            <button id="tellPositiveOrNegative">Tell if Expenses are More than Income</button>
         </div>
 
-        <!-- Output Area -->
-        <div id="output" class="output">
-            <!-- Results will be displayed here -->
-        </div>
+        <div class="output-area" id="output"></div>
     </div>
 
-    <script src="app.js"></script> <!-- Link to your JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
